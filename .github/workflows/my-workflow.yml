@@ -16,3 +16,10 @@ jobs:
 
       - name: ha-ha
         uses: ./.github/actions/joke-action
+        id: jokes
+
+      - name: create-issue
+        uses: ./.github/actions/issue-maker
+        with:
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          joke: ${{steps.jokes.outputs.joke-output}}
