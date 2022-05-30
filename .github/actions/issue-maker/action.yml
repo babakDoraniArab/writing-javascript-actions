@@ -5,12 +5,14 @@ description: "consume the output of the previous action and create a new issue i
 inputs:
   joke:
     description: "This will become the body of the created issue"
+    required: false
   issue-title:
     description: "Every issue needs a title, it's nice to supply one, even though you could do this dynamically within your code"
     default: "a joke for you"
     required: true
   repo-token:
     description: "Token with permissions to do repo things"
+    required: false
 
 runs:
   using: "node12"
